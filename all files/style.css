@@ -1,0 +1,256 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body and general styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Header and navigation styling */
+.header {
+    background-color: #333;
+    height: 50px;
+}
+
+nav {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 2rem;
+    margin-left: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-right: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+nav ul li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #ff6347;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+/* Search bar styling */
+.searchbar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.searchbar input {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.searchbar input:focus {
+    border-color: #ff6347;
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+    outline: none;
+}
+
+/* Products section styling */
+.proudcts {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+.box img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s ease, filter 0.5s;
+}
+
+.box img:hover {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+.box p {
+    margin-top: 15px;
+    color: #666;
+}
+
+/* Floating action button for each product (advanced design) */
+.box .add-to-cart {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.box:hover .add-to-cart {
+    opacity: 1;
+    bottom: 40px;
+}
+
+.add-to-cart:hover {
+    background-color: #ff4500;
+}
+
+/* About us section styling */
+.about {
+    padding: 60px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about h3 {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 0 15%;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+/* Contact section styling */
+.contact {
+    padding: 40px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
+.contact h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff6347;
+}
+
+.contact p {
+    padding: 0 10%;
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.info {
+    padding: 30px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.info h1, .info h2 {
+    color: #ff6347;
+}
+
+.info p {
+    color: #ddd;
+    padding: 10px 15%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .proudcts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .about h3, .contact p {
+        padding: 0 10%;
+    }
+
+    .searchbar input {
+        width: 80%;
+    }
+}
